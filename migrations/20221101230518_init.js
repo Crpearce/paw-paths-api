@@ -4,7 +4,7 @@
  */
 exports.up = function(knex) {
     return knex.schema.createTable('pathData', function(table) {
-        table.increments('id')
+        table.increments('id').primary()
         table.string('title')
         table.string('location')
         table.string('type')
