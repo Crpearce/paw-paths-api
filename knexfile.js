@@ -6,12 +6,14 @@
  module.exports = {
   development: {
     client: "pg",
-    connection: {
-      port: 8718,
-      user: "postgres",
-      password: "null",
-      database: "paw_paths_api1",
+    connection: 'postgres://localhost/paw_paths_api1',
+    migrations: {
+      directory: './migrations'
     },
+    seeds: {
+          directory: './seeds/pathData'
+        },
+        useNullAsDefault: true
   },
   pool: {
     min: 2,
@@ -19,5 +21,5 @@
   },
   migrations: {
     tableName: "knex_migrations",
-  },
+  }
 };
