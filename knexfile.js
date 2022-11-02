@@ -7,7 +7,7 @@
   development: {
     client: "pg",
     connection: {
-      port: 8718,
+      port: 8080,
       user: "postgres",
       password: "null",
       database: "paw_paths_api1",
