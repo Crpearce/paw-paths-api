@@ -3,10 +3,18 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const knex = require('./knex')
-app.set('port', process.env.PORT || 8080)
+
+app.set('port', 8080)
+
+// const environment = process.env.NODE_ENV || 'development';
+// const configuration = require('../knexfile')[environment];
+// const database = require('knex')(configuration);
 
 //middleware
-app.use(cors())
+// app.use(cors())
+app.use(cors({
+  allowedOrigins: ['localhost:8080']
+}));
 
 app.use(express.json());
 
