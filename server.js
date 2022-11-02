@@ -7,11 +7,14 @@ app.set('port', process.env.PORT || 8080)
 
 //middleware
 app.use(cors())
-// app.use(express.json());
+
+app.use(express.json());
+
 app.get('/api/v1/pathData', async(request, response) => {
     const pathData = await knex.select().from('pathData')
     response.status(200).json(pathData)
 })
+
 //routes
 app.listen(app.get('port'), () => {
   console.log(`server has started on http://localhost:${app.get('port')}.`)
